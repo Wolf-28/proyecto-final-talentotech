@@ -58,6 +58,8 @@ def inicio():
                     for producto in productos:
                         print(f"ID: {producto[0]} | Nombre: {producto[1]}\nDescripción: {producto[2]}\nCantidad: {producto[3]} | Precio unitario: ${producto[4]:.2f}\nCategoria: {producto[5]}\n")
                     conexion.commit()
+                    if productos == []:
+                        print("La tabla está vacía\n")
                 except sqlite3.Error:
                     print("Ocurrio un error con la visualización de la base de datos")
                     conexion.rollback()
